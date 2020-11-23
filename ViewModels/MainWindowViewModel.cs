@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reactive;
-using System.Reactive.Linq;
-using System.Reactive.Subjects;
-using System.Text;
 using ACalc.Models;
 using ReactiveUI;
 
@@ -25,27 +20,27 @@ namespace ACalc.ViewModels
             set => this.RaiseAndSetIfChanged(ref _secondValue, value);
         }
         
-        public ReactiveCommand<int, Unit> AddNumbCommand { get; }
-        public ReactiveCommand<Unit, Unit> BSpaceCommand { get; }
-        public ReactiveCommand<Operation, Unit> DoOperationCommand { get; }
+        public ReactiveCommand<int, Unit> AddNumberCommand { get; }
+        public ReactiveCommand<Unit, Unit> RemoveLastNumberCommand { get; }
+        public ReactiveCommand<Operation, Unit> ExecuteOperationCommand { get; }
         public MainWindowViewModel()
         {
-            AddNumbCommand = ReactiveCommand.Create<int>(AddNumb);
-            DoOperationCommand = ReactiveCommand.Create<Operation>(DoOperation);
-            BSpaceCommand = ReactiveCommand.Create(BSpace);
-           RxApp.DefaultExceptionHandler = Observer.Create<Exception>(
-                ex => Console.Write("next"),
-                ex => Console.Write("Unhandled rxui error"));
+            AddNumberCommand = ReactiveCommand.Create<int>(AddNumber);
+            ExecuteOperationCommand = ReactiveCommand.Create<Operation>(ExecuteOperation);
+            RemoveLastNumberCommand = ReactiveCommand.Create(RemoveLastNumber);
+            RxApp.DefaultExceptionHandler = Observer.Create<Exception>(
+                    ex => Console.Write("next"),
+                    ex => Console.Write("Unhandled rxui error"));
           
         }
 
-        private void AddNumb(int value)
+        private void AddNumber(int value)
         {
            
             ShownValue = ShownValue * 10 + value;
         }
 
-        public void C()
+        public void ClearScreen()
         {
             ShownValue = 0;
             _operation = Operation.Add;
@@ -56,11 +51,11 @@ namespace ACalc.ViewModels
         {
             Environment.Exit(0);
         }
-        public void BSpace()
+        public void RemoveLastNumber()
         {
             ShownValue = (int)ShownValue / 10;
         }
-        private void DoOperation(Operation operation)
+        private void ExecuteOperation(Operation operation)
         {
             switch (_operation)
             {
@@ -70,19 +65,19 @@ namespace ACalc.ViewModels
                     ShownValue = 0;
                     break;
                 }
-                case Operation.Sub:
+                case Operation.Subtract:
                 {
                     _firstValue -= _secondValue;
                     ShownValue = 0;
                     break;
                 }
-                case Operation.Mul:
+                case Operation.Multiply:
                 {
                     _firstValue *= _secondValue;
                     ShownValue = 0;
                     break;
                 }
-                case Operation.Div:
+                case Operation.Divide:
                 {
                     _firstValue /= _secondValue;
                     ShownValue = 0;
@@ -90,7 +85,7 @@ namespace ACalc.ViewModels
                 }
             }
 
-            if (operation == Operation.Res)
+            if (operation == Operation.Result)
             {
                 ShownValue = _firstValue;
                 _operation = Operation.Add;
