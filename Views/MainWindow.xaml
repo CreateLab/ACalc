@@ -51,96 +51,96 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="0" Grid.Column="0" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>1</s:Int32>
                 </Button.CommandParameter>
                 1
             </Button>
-            <Button Grid.Row="0" Grid.Column="1" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="0" Grid.Column="1" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>2</s:Int32>
                 </Button.CommandParameter>
                 2
             </Button>
-            <Button Grid.Row="0" Grid.Column="2" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="0" Grid.Column="2" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>3</s:Int32>
                 </Button.CommandParameter>
                 3
             </Button>
-            <Button Grid.Row="1" Grid.Column="0" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="1" Grid.Column="0" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>4</s:Int32>
                 </Button.CommandParameter>
                 4
             </Button>
-            <Button Grid.Row="1" Grid.Column="1" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="1" Grid.Column="1" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>5</s:Int32>
                 </Button.CommandParameter>
                 5
             </Button>
-            <Button Grid.Row="1" Grid.Column="2" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="1" Grid.Column="2" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>6</s:Int32>
                 </Button.CommandParameter>
                 6
             </Button>
-            <Button Grid.Row="2" Grid.Column="0" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="2" Grid.Column="0" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>7</s:Int32>
                 </Button.CommandParameter>
                 7
             </Button>
-            <Button Grid.Row="2" Grid.Column="1" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="2" Grid.Column="1" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>8</s:Int32>
                 </Button.CommandParameter>
                 8
             </Button>
-            <Button Grid.Row="2" Grid.Column="2" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="2" Grid.Column="2" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>9</s:Int32>
                 </Button.CommandParameter>
                 9
             </Button>
-            <Button Grid.Row="3" Grid.Column="0" Command="{Binding C}">С</Button>
-            <Button Grid.Row="3" Grid.Column="1" Command="{Binding AddNumbCommand}">
+            <Button Grid.Row="3" Grid.Column="0" Command="{Binding ClearScreen}">С</Button>
+            <Button Grid.Row="3" Grid.Column="1" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>0</s:Int32>
                 </Button.CommandParameter>
                 0
             </Button>
-            <Button Grid.Row="3" Grid.Column="2" Command="{Binding BSpaceCommand}">←</Button>
+            <Button Grid.Row="3" Grid.Column="2" Command="{Binding RemoveLastNumberCommand}">←</Button>
             <Button Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" />
-            <Button Grid.Row="1" Grid.Column="3" Command="{Binding DoOperationCommand}">
+            <Button Grid.Row="1" Grid.Column="3" Command="{Binding ExecuteOperationCommand}">
                 <Button.CommandParameter>
                     <m:Operation>Add</m:Operation>
                 </Button.CommandParameter>
                 +
             </Button>
-            <Button Grid.Row="1" Grid.Column="4" Command="{Binding DoOperationCommand}">
+            <Button Grid.Row="1" Grid.Column="4" Command="{Binding ExecuteOperationCommand}">
                 <Button.CommandParameter>
-                    <m:Operation>Sub</m:Operation>
+                    <m:Operation>Subtract</m:Operation>
                 </Button.CommandParameter>
                 -
             </Button>
-            <Button Grid.Row="2" Grid.Column="3" Command="{Binding DoOperationCommand}">
+            <Button Grid.Row="2" Grid.Column="3" Command="{Binding ExecuteOperationCommand}">
                 <Button.CommandParameter>
-                    <m:Operation>Mul</m:Operation>
+                    <m:Operation>Multiply</m:Operation>
                 </Button.CommandParameter>
                 *
             </Button>
-            <Button Grid.Row="2" Grid.Column="4" Command="{Binding DoOperationCommand}">
+            <Button Grid.Row="2" Grid.Column="4" Command="{Binding ExecuteOperationCommand}">
                 <Button.CommandParameter>
-                    <m:Operation>Div</m:Operation>
+                    <m:Operation>Divide</m:Operation>
                 </Button.CommandParameter>
                 /
             </Button>
-            <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Command="{Binding DoOperationCommand}">
+            <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Command="{Binding ExecuteOperationCommand}">
                 <Button.CommandParameter>
-                    <m:Operation>Res</m:Operation>
+                    <m:Operation>Result</m:Operation>
                 </Button.CommandParameter>
                 =
             </Button>
