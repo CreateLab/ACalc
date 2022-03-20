@@ -22,12 +22,8 @@
             <Setter Property="Margin" Value="5"></Setter>
         </Style>
     </Window.Styles>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+   
+    <Grid RowDefinitions="auto,auto,*">
         <!--меню калькулятора-->
         <Menu Grid.Row="0">
             <MenuItem Header="File">
@@ -37,20 +33,7 @@
         <!--Импровизированный экран нашего калькулятора-->
         <TextBlock Grid.Row="1" Text="{Binding ShownValue}" TextAlignment="Right" FontSize="30" Margin="5" />
         <!--Клавиши выглядят как сетка(Grid)-->
-        <Grid Grid.Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
+        <Grid Grid.Row="2" RowDefinitions="*,*,*,*" ColumnDefinitions="*,*,*,*,*">
             <Button Grid.Row="0" Grid.Column="0" Command="{Binding AddNumberCommand}">
                 <Button.CommandParameter>
                     <s:Int32>1</s:Int32>

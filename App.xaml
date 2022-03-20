@@ -7,10 +7,8 @@
         <local:ViewLocator/>
     </Application.DataTemplates>
 
-     <Application.Resources>
-        <themes:BundledTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Amber"/>
-    </Application.Resources>
+  
     <Application.Styles>
-        <StyleInclude Source="avares://Material.Avalonia/Material.Avalonia.Templates.xaml" />
+        <themes:MaterialTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Lime" />
     </Application.Styles>
 </Application>
